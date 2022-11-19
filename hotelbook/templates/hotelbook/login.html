@@ -1,0 +1,71 @@
+{% extends 'hotelbook/index.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   
+    <body>
+        {% block content %}
+        <!-- Header Section Start -->
+        
+        <!-- Header Section End -->
+        
+        <!-- Login Section Start -->
+        <div id="login">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Login</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mi libero. Quisque convallis, enim at venenatis tincidunt.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="login-form">
+                            <form method="POST">
+                                {% csrf_token %} 
+                                <div class="form-row">
+                                    <div class="control-group col-sm-6">
+                                        <label>Your Name</label>
+                                        <input type="text" name="username" class="form-control" required="required" />
+                                    </div>
+                                    <div class="control-group col-sm-6">
+                                        <label>Your Password</label>
+                                        <input type="password" name="password" class="form-control" required="required" />
+                                    </div>
+                                </div>
+                                <div class="button text-center"><button type="submit" name="login">Login</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Section End -->
+        
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href=""><li class="fa fa-instagram"></li></a>
+                            <a href=""><li class="fa fa-twitter"></li></a>
+                            <a href=""><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; 2045 <a href="">Your Site Name</a> All Rights Reserved.</p>
+						
+						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+						<p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
+        
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        {% endblock content %}
+    </body>
+</html>
