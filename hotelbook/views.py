@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
@@ -50,6 +50,11 @@ def login(request):
     
     context = {}
     return render(request, 'hotelbook/login.html', context)
+
+
+def userlogout(request):
+    logout(request)
+    return redirect('login')
 
 def room(request):
     context = {}

@@ -34,7 +34,10 @@
         <!-- Header Section Start -->
         <header id="header">
             <a href="index.html" class="logo"><img src="{% static 'img/logo.jpg' %}" alt="logo"></a>
-            <div class="phone"><i class="fa fa-phone"></i>+1 234 567 8900</div>
+            <div class="phone">
+                <i class="fa fa-phone"></i>+880 1611163133                
+            </div>
+
             <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
             <nav class="main-menu top-menu">
                 <ul>
@@ -42,9 +45,14 @@
                     <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="{% url 'room' %}">Rooms</a></li>
                     <li><a href="{% url 'amenities' %}">Amenities</a></li>
-                    <li><a href="{% url 'booking' %}">Booking</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'booking' %}">Booking</a></li>                    
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>
