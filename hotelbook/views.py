@@ -3,10 +3,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 from django.http import HttpResponse
+from .models import * 
 
 # Create your views here.
 def hotelbook(request):
-    context = {}
+    rooms = Rooms.objects.all()
+    photos = RoomImage.objects.all()
+    context = {'rooms':rooms, 'photos':photos} 
     return render(request, 'hotelbook/index.html', context)
 
 def about(request):
@@ -57,8 +60,10 @@ def userlogout(request):
     return redirect('login')
 
 def room(request):
-    context = {}
-    return render(request, 'hotelbook/room.html',context)
+    rooms = Rooms.objects.all()
+    photos = RoomImage.objects.all()
+    context = {'rooms':rooms, 'photos':photos}    
+    return render(request, 'hotelbook/room.html', context)
 
 def amenities(request):
     context = {}
